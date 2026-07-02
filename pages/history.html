@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Monitoring pH</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="header-brand">
+                <div class="header-logo">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </div>
+                <div class="header-text">
+                    <h1>Riwayat Data pH</h1>
+                    <p>Data History Kualitas Air Realtime</p>
+                </div>
+            </div>
+            <nav class="top-nav">
+                <a href="../index.html">Dashboard</a>
+                <a href="history.html" class="active">Riwayat</a>
+                <a href="about.html">Tentang</a>
+            </nav>
+            <div class="header-badge">
+                <span class="pulse-dot"></span>
+                Live Monitoring
+            </div>
+        </div>
+        <div class="header-wave">
+            <svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,20 C360,45 720,-5 1440,20 L1440,40 L0,40 Z" fill="#f0f9ff"/>
+            </svg>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- INFO -->
+        <div class="card">
+            <h3><i class="fa-solid fa-list-check" style="color: var(--primary);"></i> Ringkasan Data</h3>
+            <p>
+                Menampilkan data 20 pembacaan terakhir dari sensor pH
+                yang dikirim oleh ESP32 ke ThingSpeak secara langsung.
+            </p>
+        </div>
+
+        <!-- TABEL HISTORY -->
+        <div class="table-container">
+
+            <h3><i class="fa-solid fa-database" style="color: var(--primary);"></i> Riwayat Data pH</h3>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Waktu</th>
+                        <th>Nilai pH</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="historyTable">
+                    <!-- isi dari JS -->
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <!-- CHART -->
+        <div class="chart-container">
+
+            <h3><i class="fa-solid fa-chart-line" style="color: var(--primary);"></i> Grafik History pH</h3>
+
+            <div class="chart-wrapper">
+                <canvas id="phChart"></canvas>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4><i class="fa-solid fa-water"></i> pH Danau Maninjau</h4>
+                <p>Sistem pemantauan kualitas air Danau Maninjau secara real-time menggunakan teknologi Internet of Things (IoT).</p>
+                <div class="footer-tech-stack">
+                    <span class="footer-tech-tag"><i class="fa-solid fa-microchip"></i> ESP32</span>
+                    <span class="footer-tech-tag"><i class="fa-solid fa-tower-cell"></i> SIM800L</span>
+                    <span class="footer-tech-tag"><i class="fa-solid fa-flask"></i> Sensor pH</span>
+                    <span class="footer-tech-tag"><i class="fa-solid fa-cloud"></i> ThingSpeak</span>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4><i class="fa-solid fa-compass"></i> Navigasi</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html"><i class="fa-solid fa-chevron-right"></i> Dashboard</a></li>
+                    <li><a href="history.html"><i class="fa-solid fa-chevron-right"></i> Riwayat Data</a></li>
+                    <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> Tentang Proyek</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4><i class="fa-solid fa-address-book"></i> Hubungi</h4>
+                <p>Dibuat untuk kebutuhan proyek IoT / Tugas Akhir.</p>
+                <p>Silakan hubungi pengembang melalui:</p>
+                <a href="https://instagram.com/username_anda_disini" target="_blank" class="footer-ig-btn">
+                    <i class="fa-brands fa-instagram"></i> Instagram
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Monitoring pH Danau Maninjau — Semua Hak Dilindungi</p>
+        </div>
+    </footer>
+
+    <!-- FLOATING BOTTOM NAVIGATION BAR -->
+    <nav class="bottom-nav">
+        <a href="../index.html" class="bottom-nav-item">
+            <i class="fa-solid fa-chart-simple"></i>
+            <span>Dashboard</span>
+        </a>
+        <a href="history.html" class="bottom-nav-item active">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <span>Riwayat</span>
+        </a>
+        <a href="about.html" class="bottom-nav-item">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>Tentang</span>
+        </a>
+    </nav>
+
+    <!-- JS -->
+    <script src="../assets/js/app.js"></script>
+
+</body>
+
+</html>
