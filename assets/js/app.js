@@ -383,7 +383,32 @@ function updateChart(feeds){
 
                     suggestedMin:4,
 
-                    suggestedMax:10
+                    suggestedMax:10,
+
+                    title: {
+                        display: true,
+                        text: 'Kadar pH',
+                        align: 'end',
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+
+
+                },
+
+
+                x:{
+
+
+                    title: {
+                        display: true,
+                        text: 'Waktu',
+                        align: 'end',
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
 
 
                 }
@@ -563,3 +588,22 @@ setInterval(()=>{
 
 
 },1000);
+
+// =====================================
+// PWA SERVICE WORKER
+// =====================================
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        // Sesuaikan path berdasarkan lokasi file (index.html vs pages/*.html)
+        const swPath = window.location.pathname.includes('/pages/') ? '../sw.js' : 'sw.js';
+        
+        navigator.serviceWorker.register(swPath)
+            .then(registration => {
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            })
+            .catch(err => {
+                console.log('ServiceWorker registration failed: ', err);
+            });
+    });
+}
