@@ -11,6 +11,11 @@
 
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- PWA -->
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#1e3a8a">
+    <link rel="apple-touch-icon" href="../assets/img/icon.svg">
 </head>
 
 <body>
@@ -39,7 +44,7 @@
         </div>
         <div class="header-wave">
             <svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,20 C360,45 720,-5 1440,20 L1440,40 L0,40 Z" fill="#f0f9ff"/>
+                <path d="M0,15 C360,35 720,5 1440,15 L1440,40 L0,40 Z" fill="#f0f9ff"/>
             </svg>
         </div>
     </header>
@@ -51,7 +56,7 @@
             <div class="card">
                 <h3><i class="fa-solid fa-circle-nodes" style="color: var(--primary);"></i> Deskripsi Sistem</h3>
                 <p>
-                    Proyek Internet of Things (IoT) ini dirancang khusus untuk memantau tingkat keasaman (pH) air Danau Maninjau secara real-time. Dengan integrasi sensor pH dan ESP32, data dikirim secara nirkabel melalui modul SIM800L ke cloud platform ThingSpeak, membantu para petani ikan dan pihak terkait memantau kelayakan air dan mencegah kegagalan budidaya ikan.
+                    Proyek Internet of Things (IoT) ini dirancang khusus untuk memantau tingkat keasaman (pH) air Danau Maninjau secara real-time. Dengan integrasi sensor pH dan ESP32, data dikirim secara nirkabel melalui modul SIM800L ke cloud platform ThingSpeak.
                 </p>
             </div>
 
@@ -64,30 +69,6 @@
                     <li>Mengirimkan pembacaan data secara terjadwal ke server cloud ThingSpeak.</li>
                     <li>Memberikan peringatan dini dan notifikasi status air untuk tindakan pencegahan cepat.</li>
                 </ul>
-            </div>
-
-            <!-- KOMPONEN -->
-            <div class="card">
-                <h3><i class="fa-solid fa-microchip" style="color: var(--primary);"></i> Komponen Sistem</h3>
-                <ul>
-                    <li><strong>ESP32:</strong> Mikrokontroler utama dengan modul Wi-Fi dan Bluetooth built-in.</li>
-                    <li><strong>Sensor pH Air:</strong> Mengukur konsentrasi ion hidrogen dalam air.</li>
-                    <li><strong>SIM800L:</strong> Modul seluler GSM/GPRS untuk pengiriman data tanpa ketergantungan Wi-Fi lokal.</li>
-                    <li><strong>OLED SSD1306:</strong> Layar mini untuk pemantauan data langsung di lokasi alat dipasang.</li>
-                    <li><strong>ThingSpeak:</strong> Platform IoT cloud terpercaya untuk analisis data dan visualisasi grafik.</li>
-                </ul>
-            </div>
-
-            <!-- CARA KERJA -->
-            <div class="card">
-                <h3><i class="fa-solid fa-gears" style="color: var(--primary);"></i> Cara Kerja Sistem</h3>
-                <ol>
-                    <li>Sensor pH membaca tingkat keasaman sampel air danau.</li>
-                    <li>ESP32 memproses sinyal analog sensor menjadi nilai numerik pH yang valid.</li>
-                    <li>Data pH ditampilkan pada layar OLED fisik di lokasi pemantauan.</li>
-                    <li>ESP32 menggunakan modul SIM800L untuk mengirimkan data ke ThingSpeak via jaringan GSM.</li>
-                    <li>Website ini menarik data feed dari ThingSpeak secara otomatis untuk divisualisasikan kepada pengguna.</li>
-                </ol>
             </div>
 
             <!-- STATUS -->
@@ -104,16 +85,7 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-section">
-                <h4><i class="fa-solid fa-water"></i> pH Danau Maninjau</h4>
-                <p>Sistem pemantauan kualitas air Danau Maninjau secara real-time menggunakan teknologi Internet of Things (IoT).</p>
-                <div class="footer-tech-stack">
-                    <span class="footer-tech-tag"><i class="fa-solid fa-microchip"></i> ESP32</span>
-                    <span class="footer-tech-tag"><i class="fa-solid fa-tower-cell"></i> SIM800L</span>
-                    <span class="footer-tech-tag"><i class="fa-solid fa-flask"></i> Sensor pH</span>
-                    <span class="footer-tech-tag"><i class="fa-solid fa-cloud"></i> ThingSpeak</span>
-                </div>
-            </div>
+
             <div class="footer-section">
                 <h4><i class="fa-solid fa-compass"></i> Navigasi</h4>
                 <ul class="footer-links">
