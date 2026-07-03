@@ -14,6 +14,11 @@
 
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#1e3a8a">
+    <link rel="apple-touch-icon" href="../assets/img/icon.svg">
 </head>
 
 <body>
@@ -42,7 +47,7 @@
         </div>
         <div class="header-wave">
             <svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,20 C360,45 720,-5 1440,20 L1440,40 L0,40 Z" fill="#f0f9ff"/>
+                <path d="M0,15 C360,35 720,5 1440,15 L1440,40 L0,40 Z" fill="#f0f9ff"/>
             </svg>
         </div>
     </header>
@@ -124,17 +129,7 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-section">
-                <h4><i class="fa-solid fa-water"></i> pH Danau Maninjau</h4>
-                <p>Sistem pemantauan kualitas air Danau Maninjau secara real-time menggunakan teknologi Internet of Things (IoT).</p>
-                <div class="footer-tech-stack">
-                    <span class="footer-tech-tag"><i class="fa-solid fa-microchip"></i> ESP32</span>
-                    <span class="footer-tech-tag"><i class="fa-solid fa-tower-cell"></i> SIM800L</span>
-                    <span class="footer-tech-tag"><i class="fa-solid fa-flask"></i> Sensor pH</span>
-                    <span class="footer-tech-tag"><i class="fa-solid fa-cloud"></i> ThingSpeak</span>
-                    <span class="footer-tech-tag"><i class="fa-solid fa-display"></i> OLED</span>
-                </div>
-            </div>
+
             <div class="footer-section">
                 <h4><i class="fa-solid fa-compass"></i> Navigasi</h4>
                 <ul class="footer-links">
